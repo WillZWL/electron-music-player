@@ -26,9 +26,9 @@ npm run lint
 npm run pack
 ```
 ## ToDo
-1.UI Optimize
-2.Add menu for player
-3.Download music
+1. UI Optimize
+2. Add menu for player
+3. Download music
 
 More information can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/docs/npm_scripts.html).
 
