@@ -610,7 +610,6 @@ export default {
             img {
               display: inline-block;
               margin-top: 47px;
-              margin-left: 47px;
               width: 61%;
               height: 61%;
               transition: all 1s ease-out;
@@ -785,7 +784,7 @@ export default {
 
       .controls {
         margin-left: 0;
-        width: 70%;
+        width: 80%;
       }
     }
   }

@@ -8,10 +8,9 @@
   export default {
   }
 </script>
-
 <style>
+  @import url(http://at.alicdn.com/t/font_naydt0qqfh7low29.css);
   @import url(https://fonts.googleapis.com/css?family=Lato:300);
-
   * {
     margin: 0;
     padding: 0;
