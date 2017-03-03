@@ -7,11 +7,7 @@
         <div class="mask"></div>
         <div class="show-music">
           <div class="serach-music">
-            <input type="text>" placeholder="你想听什么呢？" v-model="search" @keyup.enter="searchMusic">
-            <select @change="changeSelect" ref="select">
-              <option>本地</option>
-              <option>在线</option>
-            </select>
+            <input type="text" class="form-control" placeholder="你想听什么呢？" v-model="search" @keyup.enter="searchMusic">
             <button v-show="onLine" @click="searchMusic">搜索</button>
           </div>
           <div class="left">
@@ -96,18 +92,6 @@
               <div class="lineIn" :style="{'width': (nowTime / allTime) * 100 + '%'}">
                 <i class="iconfont icon-dot"></i>
               </div>
-            </div>
-            <div class="volume">
-              <i
-                @click="changeMuted"
-                :class="{'icon-yl': muted === false, 'icon-jy': muted === true}"
-                class="iconfont"></i>
-              <span class="volume-line" @click="changeVolume"></span>
-              <span class="volume-to"
-                @click="changeVolume"
-               :style="{'width': volume * 85 + 'px'}">
-                <i class="iconfont icon-dot"></i>
-              </span>
             </div>
           </div>
         </div>
@@ -430,10 +414,34 @@ export default {
 </script>
 
 <style lang="scss">
+  .form-control {
+    display: block;
+    height: 30px;
+    padding: 6px 6px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+         -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  }
   .content {
     background-color: #fff;
     width: auto;
+    padding: 20px;
     overflow-x: hidden;
+    border-radius: 14px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+         -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   }
   span.clip {
     display: inline-block;
@@ -478,13 +486,14 @@ export default {
     }
 
     .show-music {
+      position: relative;
       width: 100%;
-      padding-top: 5%;
       color: rgba(225,225,225, 1);
       z-index: 3;
       .left {
         float: left;
-        width: 50%;
+        width: 70%;
+        min-width:570px;
         height: 425px;
         overflow-y: scroll;
         overflow-x: hidden;
@@ -507,6 +516,7 @@ export default {
         table {
           display: block;
           width: 100%;
+          min-width: 570px;
           height: 100%;
 
           td {
@@ -566,7 +576,7 @@ export default {
 
       .right {
         float: left;
-        width: 40%;
+        width: 30%;
         height: 425px;
         overflow-x: hidden;
         overflow-y: scroll;
@@ -717,51 +727,12 @@ export default {
             }
           }
         }
-
-        .volume {
-          float: right;
-          position: relative;
-          width: 120px;
-
-          i {
-            cursor: pointer;
-            font-size: 25px;
-          }
-
-          .volume-line {
-            position: absolute;
-            width: 85px;
-            top: 20px;
-            left: 35px;
-            height: 4px;
-            background: rgba(255,255,255,.2);
-            z-index: 1;
-            cursor: pointer;
-          }
-
-          .volume-to {
-            position: absolute;
-            top: 20px;
-            left: 35px;
-            height: 4px;
-            background: rgba(255,255,255, 0.8);
-            z-index: 2;
-            cursor: pointer;
-
-            i {
-              position: absolute;
-              top: -16px;
-              right: -8px;
-              z-index: 3;
-            }
-          }
-        }
       }
 
       .serach-music {
         margin-bottom: 10px;
         input {
-          width: 140px;;
+          width: 360px;;
           line-height: 30px;
           border: 0;
           font-size: 18px;
@@ -809,7 +780,7 @@ export default {
       }
 
       .right {
-        width: 40%;
+        width: 30%;
       }
 
       .controls {
@@ -825,7 +796,7 @@ export default {
       }
 
       .right {
-        width: 50%;
+        width: 30%;
       }
     }
   }
