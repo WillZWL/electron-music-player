@@ -1,10 +1,15 @@
 # electron-music-player
 
 > Electron && Vue Music Player
+A mini music player use Vue2.0 && vue-electron
 
 ## Build Setup
 
 ``` bash
+# clone the code && cd
+git clone https://github.com/WillZWL/electron-music-player
+cd electron-music-player
+
 # install dependencies
 npm install
 
@@ -20,6 +25,11 @@ npm run lint
 # run webpack in production
 npm run pack
 ```
+## ToDo
+1.UI Optimize
+2.Add menu for player
+3.Download music
+
 More information can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/docs/npm_scripts.html).
 
 ---
